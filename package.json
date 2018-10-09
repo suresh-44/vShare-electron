@@ -8,9 +8,15 @@
     "email": "anandpushkar088@gmail.com",
     "url": "https://pushkaranand.me"
   },
+  "private": true,
   "copyright": "© 2018, Pushkar Anand",
   "homepage": "http://example.com",
   "main": "app/background.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vShareApp/vShare-electron"
+  },
+  "bugs": "https://github.com/vShareApp/vShare-electron/issues",
   "build": {
     "appId": "me.pushkaranand.vshare",
     "files": [
@@ -56,5 +62,12 @@
     "webpack-cli": "^3.0.4",
     "webpack-merge": "^4.1.3",
     "webpack-node-externals": "^1.7.2"
-  }
+  },
+  "contributors": [
+    {
+      "name": "xxx",
+      "email": "xxx",
+      "url": "xxx"
+    }
+  ]
 }
