@@ -1,0 +1,15 @@
+language: node_js
+
+node_js:
+- "node"
+- "lts/*"
+
+os:
+- linux
+- osx
+
+before_script:
+- pwd
+- node -v
+- npm install
+-
