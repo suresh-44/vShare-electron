@@ -1,34 +1,51 @@
+import fs from "fs";
 import jsonFile from "jsonfile";
 
+const appDataFile = "app-data.json";
+
 const appData = {
-  appDataFile: "app-data.json",
 
   write: (key, value) => {
-    let json = jsonFile.readFileSync(this.appDataFile);
-    json[key] = value;
-    return jsonFile.writeFile(this.appDataFile, json);
+    try {
+
+      fs.accessSync(appDataFile, fs.constants.F_OK);
+      let json = jsonFile.readFileSync(appDataFile);
+      json[key] = value;
+      return jsonFile.writeFile(appDataFile, json);
+
+    } catch (e) {
+
+      let obj = {};
+      obj[key] = value;
+      return jsonFile.writeFile(appDataFile, obj);
+
+    }
+
   },
 
   get: (key) => {
-    if (this.exists(key)) {
-      let json = jsonFile.readFileSync(this.appDataFile);
-      return json[key];
-    } else {
-      throw key + " does not exists"
-    }
+
+    let json = jsonFile.readFileSync(appDataFile);
+    return json[key];
   },
 
   modify: (key, value) => {
-    let json = jsonFile.readFileSync(this.appDataFile);
+    let json = jsonFile.readFileSync(appDataFile);
     json[key] = value;
-    return jsonFile.writeFile(this.appDataFile, json);
+    return jsonFile.writeFile(appDataFile, json);
   },
 
   exists: (key) => {
-    let json = jsonFile.readFileSync(this.appDataFile);
+    let json = jsonFile.readFileSync(appDataFile);
     return (key in json);
+  },
+
+  remove: (key) => {
+    let json = jsonFile.readFileSync(appDataFile);
+    delete json[key];
+    return jsonFile.writeFile(appDataFile, json);
   }
 
 };
 
-module.exports = appData;
+export default appData;
