@@ -1,4 +1,4 @@
-const appData = require('./app-data');
+import appData from "./app-data";
 
 const firstRun = {
 

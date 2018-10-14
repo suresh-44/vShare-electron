@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 const appData = {
   appDataFile: "app-data.json",
 
