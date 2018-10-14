@@ -1,22 +1,15 @@
-const fs = require('fs');
+const appData = require('./app-data');
 
 const firstRun = {
 
-  firstFileName: "first.run",
+  appDataKey: "first-run",
 
   firstRunDone: function () {
-    fs.writeFile(this.firstFileName, "done", err => {
-      if (err) throw err;
-    })
+    appData.write(this.appDataKey, 'shown')
   },
 
   isFirstRun: function () {
-    try {
-      fs.accessSync(this.firstFileName, fs.constants.F_OK);
-      return true;
-    } catch (e) {
-      return false;
-    }
+    return (appData.exists(this.appDataKey));
   }
 
 };
