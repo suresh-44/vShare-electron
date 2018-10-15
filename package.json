@@ -87,13 +87,13 @@
     "webpack-node-externals": "^1.7.2"
   },
   "contributors": [
-	  {
-		"name": "Sejal Kumari",
-		"email": "sejalkumari25@gmail.com"
-	  },
-	  {
-		"name": "Suresh N",
-		"email": "sureshsunsuri@gmail.com"
-	  }
+    {
+      "name": "Sejal Kumari",
+      "email": "sejalkumari25@gmail.com"
+    },
+    {
+      "name": "Suresh N",
+      "email": "sureshsunsuri@gmail.com"
+    }
   ]
 }
