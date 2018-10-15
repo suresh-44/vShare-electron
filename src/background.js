@@ -6,17 +6,9 @@
 import path from "path";
 import url from "url";
 import env from "env";
-import firstRun from "./helpers/first-run"
-import {
-  app,
-  Menu
-} from "electron";
-import {
-  devMenuTemplate
-} from "./menu/dev_menu_template";
-import {
-  editMenuTemplate
-} from "./menu/edit_menu_template";
+import {app, Menu} from "electron";
+import {devMenuTemplate} from "./menu/dev_menu_template";
+import {editMenuTemplate} from "./menu/edit_menu_template";
 import createWindow from "./helpers/window";
 // Special module holding environment variables which you declared
 // in config/env_xxx.json file.
@@ -56,14 +48,6 @@ app.on("ready", () => {
 
   if (env.name === "development") {
     mainWindow.openDevTools();
-
-  }
-
-  if (firstRun.isFirstRun()) {
-    // intro to vShare App
-    firstRun.firstRunDone()
-  } else {
-    // continue to main app
 
   }
 

@@ -1,10 +1,10 @@
 export const editMenuTemplate = {
   label: "Edit",
   submenu: [{
-      label: "Undo",
-      accelerator: "CmdOrCtrl+Z",
-      selector: "undo:"
-    },
+    label: "Undo",
+    accelerator: "CmdOrCtrl+Z",
+    selector: "undo:"
+  },
     {
       label: "Redo",
       accelerator: "Shift+CmdOrCtrl+Z",
