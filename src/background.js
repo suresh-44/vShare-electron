@@ -5,6 +5,8 @@
 
 import path from "path";
 import url from "url";
+import env from "env";
+import firstRun from "./helpers/first-run"
 import {
   app,
   Menu
@@ -18,7 +20,7 @@ import {
 import createWindow from "./helpers/window";
 // Special module holding environment variables which you declared
 // in config/env_xxx.json file.
-import env from "env";
+
 
 const setApplicationMenu = () => {
   const menus = [editMenuTemplate];
