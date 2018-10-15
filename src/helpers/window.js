@@ -3,7 +3,7 @@
 // Can be used for more than one window, just construct many
 // instances of it and give each different name.
 
-import { app, BrowserWindow, screen } from "electron";
+import {app, BrowserWindow, screen} from "electron";
 import jetpack from "fs-jetpack";
 
 export default (name, options) => {
@@ -71,7 +71,7 @@ export default (name, options) => {
     if (!win.isMinimized() && !win.isMaximized()) {
       Object.assign(state, getCurrentPosition());
     }
-    userDataDir.write(stateStoreFile, state, { atomic: true });
+    userDataDir.write(stateStoreFile, state, {atomic: true});
   };
 
   state = ensureVisibleOnSomeDisplay(restore());

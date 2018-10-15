@@ -17,7 +17,6 @@ logs
 *.log
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
 
 # Runtime data
 pids
@@ -88,3 +87,11 @@ typings/
 
 #app data files
 app-data.json
+
+#icons
+resources/android/
+resources/icon.png
+resources/imessenger/
+resources/ios/
+resources/watchkit/
+src/libs/
