@@ -86,8 +86,14 @@
     "webpack-merge": "^4.1.3",
     "webpack-node-externals": "^1.7.2"
   },
-  "contributors": [{
-    "name": "Suresh N",
-    "email": "sureshsunsuri@gmail.com"
-  }]
+  "contributors": [
+	  {
+		"name": "Sejal Kumari",
+		"email": "sejalkumari25@gmail.com"
+	  },
+	  {
+		"name": "Suresh N",
+		"email": "sureshsunsuri@gmail.com"
+	  }
+  ]
 }
