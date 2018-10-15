@@ -16,8 +16,6 @@ import {
   editMenuTemplate
 } from "./menu/edit_menu_template";
 import createWindow from "./helpers/window";
-import firstRun from "./helpers/first-run";
-
 // Special module holding environment variables which you declared
 // in config/env_xxx.json file.
 import env from "env";

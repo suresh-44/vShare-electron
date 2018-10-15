@@ -1,7 +1,12 @@
 import fs from "fs";
 import jsonFile from "jsonfile";
+import {
+  remote
+} from "electron";
 
-const appDataFile = "app-data.json";
+const app = remote.app;
+const userDataPath = app.getPath("userData");
+const appDataFile = userDataPath + "/app-data.json";
 
 const appData = {
 

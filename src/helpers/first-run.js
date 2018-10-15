@@ -14,4 +14,4 @@ const firstRun = {
 
 };
 
-export default firstRun
+module.exports = firstRun;

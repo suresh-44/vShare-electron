@@ -85,3 +85,6 @@ typings/
 
 # Serverless directories
 .serverless
+
+#app data files
+app-data.json
