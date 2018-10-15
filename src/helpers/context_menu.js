@@ -1,7 +1,9 @@
 // This gives you default context menu (cut, copy, paste)
 // in all input fields and textareas across your app.
 
-import { remote } from "electron";
+import {
+  remote
+} from "electron";
 
 const Menu = remote.Menu;
 const MenuItem = remote.MenuItem;

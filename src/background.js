@@ -5,13 +5,22 @@
 
 import path from "path";
 import url from "url";
-import {app, Menu} from "electron";
-import {devMenuTemplate} from "./menu/dev_menu_template";
-import {editMenuTemplate} from "./menu/edit_menu_template";
+import env from "env";
+import firstRun from "./helpers/first-run"
+import {
+  app,
+  Menu
+} from "electron";
+import {
+  devMenuTemplate
+} from "./menu/dev_menu_template";
+import {
+  editMenuTemplate
+} from "./menu/edit_menu_template";
 import createWindow from "./helpers/window";
 // Special module holding environment variables which you declared
 // in config/env_xxx.json file.
-import env from "env";
+
 
 const setApplicationMenu = () => {
   const menus = [editMenuTemplate];
@@ -39,7 +48,7 @@ app.on("ready", () => {
 
   mainWindow.loadURL(
     url.format({
-      pathname: path.join(__dirname, "app.html"),
+      pathname: path.join(__dirname, "intro.html"),
       protocol: "file:",
       slashes: true
     })
@@ -47,7 +56,17 @@ app.on("ready", () => {
 
   if (env.name === "development") {
     mainWindow.openDevTools();
+
   }
+
+  if (firstRun.isFirstRun()) {
+    // intro to vShare App
+    firstRun.firstRunDone()
+  } else {
+    // continue to main app
+
+  }
+
 });
 
 app.on("window-all-closed", () => {
