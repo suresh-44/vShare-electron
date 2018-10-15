@@ -45,7 +45,7 @@ up to date with Active Admin's master branch:
 ```sh
 git remote add upstream https://github.com/vShareApp/vShare-electron.git
 git checkout master
-git pull upstream master
+git pull upstream master --no-commit
 ```
 
 Then update your feature branch from your local copy of master, and push it!
