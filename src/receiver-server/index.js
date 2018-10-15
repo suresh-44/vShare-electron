@@ -1,4 +1,9 @@
 import server from "./server";
 
-server.start();
+const receiverServer = {
+  start: () => {
+    server.start();
+  }
+};
 
+export default receiverServer;
