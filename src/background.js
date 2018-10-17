@@ -30,14 +30,19 @@ if (env.name !== "production") {
 app.on("ready", () => {
   setApplicationMenu();
 
-  const mainWindow = createWindow("main", {
-    width: 1000,
-    height: 600
-  });
+  const options = {};
+  options.width = 1000;
+  options.height = 600;
+  options.webPreferences = {
+    nodeIntegration: false,
+    preload: './preload.js'
+  };
+
+  const mainWindow = createWindow("main", options);
 
   mainWindow.loadURL(
     url.format({
-      pathname: path.join(__dirname, "intro.html"),
+      pathname: path.join(__dirname, "app.html"),
       protocol: "file:",
       slashes: true
     })
