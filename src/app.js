@@ -13,3 +13,4 @@ import "./secure";
 const app = remote.app;
 const currentWindow = remote.getCurrentWindow();
 const appDir = jetpack.cwd(app.getAppPath());
+
