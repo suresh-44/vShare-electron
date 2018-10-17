@@ -5,11 +5,13 @@
 
 import path from "path";
 import url from "url";
-import env from "env";
 import {app, Menu} from "electron";
 import {devMenuTemplate} from "./menu/dev_menu_template";
 import {editMenuTemplate} from "./menu/edit_menu_template";
 import createWindow from "./helpers/window";
+
+import env from "env";
+
 
 const setApplicationMenu = () => {
   const menus = [editMenuTemplate];
@@ -18,6 +20,7 @@ const setApplicationMenu = () => {
   }
   Menu.setApplicationMenu(Menu.buildFromTemplate(menus));
 };
+
 
 // Save userData in separate folders for each environment.
 // Thanks to this you can use production and development versions of the app
@@ -33,10 +36,9 @@ app.on("ready", () => {
   const options = {};
   options.width = 1000;
   options.height = 600;
-  options.webPreferences = {
-    nodeIntegration: false,
-    preload: './preload.js'
-  };
+  /*  options.webPreferences = {
+      nodeIntegration: true
+    };*/
 
   const mainWindow = createWindow("main", options);
 
