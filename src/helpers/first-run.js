@@ -4,12 +4,12 @@ const firstRun = {
 
   appDataKey: "first-run",
 
-  firstRunDone: function () {
+  firstRunDone: () => {
     appData.write(this.appDataKey, 'shown')
   },
 
-  isFirstRun: function () {
-    return (appData.exists(this.appDataKey));
+  isFirstRun: () => {
+    return !(appData.exists(this.appDataKey));
   }
 
 };
