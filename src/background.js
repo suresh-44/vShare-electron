@@ -47,12 +47,6 @@ app.on("ready", () => {
       slashes: true
     })
   );
-
-  if (env.name === "development") {
-    mainWindow.openDevTools();
-
-  }
-
 });
 
 app.on("window-all-closed", () => {
