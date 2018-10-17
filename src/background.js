@@ -7,17 +7,18 @@ import path from "path";
 import url from "url";
 import {app, Menu} from "electron";
 import {devMenuTemplate} from "./menu/dev_menu_template";
-import {editMenuTemplate} from "./menu/edit_menu_template";
+import {aboutMenuTemplate, fileMenuTemplate} from "./menu/menu_templates";
 import createWindow from "./helpers/window";
 
 import env from "env";
 
 
 const setApplicationMenu = () => {
-  const menus = [editMenuTemplate];
+  const menus = [fileMenuTemplate];
   if (env.name !== "production") {
     menus.push(devMenuTemplate);
   }
+  menus.push(aboutMenuTemplate);
   Menu.setApplicationMenu(Menu.buildFromTemplate(menus));
 };
 
