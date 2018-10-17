@@ -3,7 +3,7 @@ import receiverServer from "./../receiver-server";
 
 describe("Receive server tests", () => {
 
-  it('Server starts', () => {
+  it("Server starts", () => {
     receiverServer.start();
   });
   

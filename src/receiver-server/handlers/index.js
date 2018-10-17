@@ -13,7 +13,7 @@ handler.root = (data, callback) => {
   } else {
 
     callback(200, {
-      welcome: 'Hello World!'
+      welcome: "Hello World!"
     });
 
   }
@@ -32,7 +32,7 @@ handler.receive = (data, callback) => {
   } else {
 
     callback(200, {
-      welcome: 'Hello World!'
+      welcome: "Hello World!"
     });
 
   }
@@ -51,7 +51,7 @@ handler.check = (data, callback) => {
   } else {
 
     callback(200, {
-      welcome: 'Hello World!'
+      welcome: "Hello World!"
     });
 
   }
@@ -69,7 +69,7 @@ handler.details = (data, callback) => {
   } else {
 
     callback(200, {
-      welcome: 'Hello World!'
+      welcome: "Hello World!"
     });
 
   }

@@ -15,11 +15,11 @@
 
 import {shell} from "electron";
 
-const supportExternalLinks = event => {
+const supportExternalLinks = (event) => {
   let href;
   let isExternal = false;
 
-  const checkDomElement = element => {
+  const checkDomElement = (element) => {
     if (element.nodeName === "A") {
       href = element.getAttribute("href");
     }

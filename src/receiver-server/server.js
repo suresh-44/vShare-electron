@@ -1,27 +1,27 @@
 import http from "http";
 import url from "url";
 import {StringDecoder} from "string_decoder";
-import config from "./config"
+import config from "./config";
 import routes from "./routes";
 import handlers from "./handlers";
 
 const httpServer = http.createServer((req, res) => {
 
-  res.setHeader('Content-Type', 'application/json');
+  res.setHeader("Content-Type', 'application/json");
 
   let parsedUrl = url.parse(req.url, true);
   let path = parsedUrl.pathname;
-  let trimmedPath = path.replace(/^\/+|\/+$/g, '');
+  let trimmedPath = path.replace(/^\/+|\/+$/g, "");
   let method = req.method.toLowerCase();
 
   const decoder = new StringDecoder();
 
-  let buffer = '';
-  req.on('data', data => {
+  let buffer = "";
+  req.on("data", (data) => {
     buffer += decoder.write(data);
   });
 
-  req.on('end', () => {
+  req.on("end", () => {
     buffer += decoder.end();
     const payload = buffer;
     const headers = req.headers;

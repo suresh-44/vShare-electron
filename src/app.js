@@ -28,6 +28,4 @@ const firstCheck = () => {
 };
 
 document.addEventListener("load", firstCheck);
-document.getElementById('a').onclick = () => {
-  document.getElementById('a').innerHTML = 'success'
-};
+

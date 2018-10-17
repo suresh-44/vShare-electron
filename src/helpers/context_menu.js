@@ -41,7 +41,7 @@ textEditingMenu.append(paste);
 
 document.addEventListener(
   "contextmenu",
-  event => {
+  (event) => {
     switch (event.target.nodeName) {
       case "TEXTAREA":
       case "INPUT":
