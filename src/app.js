@@ -27,5 +27,7 @@ const firstCheck = () => {
   }
 };
 
-document.addEventListener("load", firstCheck);
+window.onload = firstCheck;
+
+//document.addEventListener("load", firstCheck);
 

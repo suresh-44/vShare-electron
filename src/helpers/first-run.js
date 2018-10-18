@@ -1,15 +1,15 @@
 import appData from "./app-data";
 
+const appDataKey = "firstRun";
+
 const firstRun = {
 
-  appDataKey: "first-run",
-
   firstRunDone: () => {
-    appData.write(this.appDataKey, 'shown')
+    appData.write(appDataKey, 'shown')
   },
 
   isFirstRun: () => {
-    return !(appData.exists(this.appDataKey));
+    return !(appData.exists(appDataKey));
   }
 
 };
