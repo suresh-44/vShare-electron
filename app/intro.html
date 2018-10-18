@@ -5,20 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'">
   <title>vShare</title>
-
-  <style>
-    #disp1 {
-      display: block;
-    }
-
-    #disp2 {
-      display: none;
-    }
-
-    #disp3 {
-      display: none;
-    }
-  </style>
+  <link rel="stylesheet" href="static/css/intro.css"/>
 </head>
 <body>
 <div class="intro" id="disp1">
@@ -33,24 +20,6 @@
 
 </div>
 
+<script src="static/js/intro.js"></script>
 </body>
-
-<script>
-  let advanceSlider = function (advanceTo) {
-    let id = "disp" + advanceTo;
-    document.getElementById(id).style.display = "block";
-
-    id = "disp" + (advanceTo - 1);
-    document.getElementById(id).style.display = "none";
-  };
-
-  let previousSlide = function (backTo) {
-    let id = "disp" + backTo;
-    document.getElementById(id).style.display = "none";
-
-    id = "disp" + (backTo + 1);
-    document.getElementById(id).style.display = "block";
-  };
-</script>
-
 </html>
