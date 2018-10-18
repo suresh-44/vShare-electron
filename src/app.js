@@ -19,7 +19,7 @@ const firstCheck = () => {
 
     currentWindow.loadURL(
       url.format({
-        pathname: path.join(__dirname, "intro.html"),
+        pathname: path.join(__dirname, "html/intro.html"),
         protocol: "file:",
         slashes: true
       })
