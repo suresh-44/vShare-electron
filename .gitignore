@@ -90,7 +90,6 @@ app-data.json
 
 #icons
 resources/android/
-resources/icon.png
 resources/imessenger/
 resources/ios/
 resources/watchkit/
