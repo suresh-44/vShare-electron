@@ -8,6 +8,7 @@ Thumbs.db
 /app/app.js
 /app/background.js
 /app/**/*.map
+/app/setup.js
 
 # ignore ide directory
 .idea/
