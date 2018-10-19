@@ -31,4 +31,5 @@ document.getElementById('prev-btn-2').onclick = () => {
 document.getElementById('continue-btn').onclick = () => {
   document.getElementById('disp3').style.display = "none";
   document.getElementById('userForm').style.display = "block";
+  document.getElementById('dots').style.display = "none";
 };
