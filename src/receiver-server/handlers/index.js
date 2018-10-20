@@ -13,7 +13,7 @@ handler.root = (data, callback) => {
   } else {
 
     callback(200, {
-      welcome: "Hello World!"
+      welcome: "/"
     });
 
   }
@@ -32,7 +32,7 @@ handler.receive = (data, callback) => {
   } else {
 
     callback(200, {
-      welcome: "Hello World!"
+      welcome: "/receive "
     });
 
   }
@@ -51,7 +51,7 @@ handler.check = (data, callback) => {
   } else {
 
     callback(200, {
-      welcome: "Hello World!"
+      welcome: "/check"
     });
 
   }
@@ -69,12 +69,13 @@ handler.details = (data, callback) => {
   } else {
 
     callback(200, {
-      welcome: "Hello World!"
+      welcome: "/details"
     });
 
   }
 };
 
+// /request
 handler.request = (data, callback) => {
 
   const acceptedVerbs = [config.verbs.GET];
@@ -85,7 +86,7 @@ handler.request = (data, callback) => {
   } else {
 
     callback(200, {
-      welcome: "Hello World!"
+      welcome: "/request"
     });
   }
 

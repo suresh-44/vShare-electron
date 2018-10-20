@@ -7,12 +7,12 @@ import handlers from "./handlers";
 
 const httpServer = http.createServer((req, res) => {
 
-  res.setHeader("Content-Type', 'application/json");
+  res.setHeader("Content-Type", "application/json");
 
   let parsedUrl = url.parse(req.url, true);
   let path = parsedUrl.pathname;
   let trimmedPath = path.replace(/^\/+|\/+$/g, "");
-  let method = req.method.toLowerCase();
+  let method = req.method.toUpperCase();
 
   const decoder = new StringDecoder();
 
@@ -26,7 +26,12 @@ const httpServer = http.createServer((req, res) => {
     const payload = buffer;
     const headers = req.headers;
 
-    const handler = routes[trimmedPath] || handlers.notFound;
+    let handler;
+    if (trimmedPath === "" || trimmedPath === " " || !trimmedPath) {
+      handler = routes.root;
+    } else {
+      handler = routes[trimmedPath] || handlers.notFound;
+    }
 
     const data = {
       url: parsedUrl,
