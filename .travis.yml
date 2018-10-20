@@ -17,10 +17,6 @@ before_script:
 
 script: ./bash_scripts/travis-build.sh
 
-cache:
-  directories:
-  - node_modules
-
 notifications:
   email:
     on_success: never
