@@ -1,20 +1,20 @@
 import {expect} from "chai";
-import appData from "./../helpers/app-data";
+import index from "../app-data/index";
 
 describe("AppData tests", () => {
 
   it("AppData write ", () => {
-    appData.write("test", "success");
+    index.write("test", "success");
   });
 
   it("AppData get ", () => {
-    let val = appData.get("test");
+    let val = index.get("test");
     expect(val).to.equal("success");
   });
 
   it("AppData modify ", () => {
-    appData.modify("test", "done").then(res => {
-      let val = appData.get("test");
+    index.modify("test", "done").then(res => {
+      let val = index.get("test");
       expect(val).to.equal("done");
     }).catch(err => {
       expect.fail(err);
@@ -22,8 +22,8 @@ describe("AppData tests", () => {
   });
 
   it("deletes and checks existence", () => {
-    appData.remove("test").then(res => {
-      expect(appData.exists("test")).to.equal("false");
+    index.remove("test").then(res => {
+      expect(index.exists("test")).to.equal("false");
     }).catch(err => {
       expect.fail(err);
     });

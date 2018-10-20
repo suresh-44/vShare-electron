@@ -6,7 +6,7 @@ const app = remote.app;
 const userDataPath = app.getPath("userData");
 const appDataFile = userDataPath + "/app-data.json";
 
-const appData = {
+const index = {
 
   write: (key, value) => {
     try {
@@ -51,4 +51,4 @@ const appData = {
 
 };
 
-export default appData;
+export default index;
