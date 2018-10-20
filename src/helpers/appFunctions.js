@@ -21,6 +21,10 @@ export const firstCheck = () => {
   }
 };
 
-export const enterReceiveMode = () => {
+export const startReceiveMode = () => {
   receiveServer.start();
+};
+
+export const startSendMode = () => {
+
 };
