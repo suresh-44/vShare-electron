@@ -75,6 +75,22 @@ handler.details = (data, callback) => {
   }
 };
 
+handler.request = (data, callback) => {
+
+  const acceptedVerbs = [config.verbs.GET];
+
+  if (!acceptedVerbs.includes(data.method)) {
+
+    callback(405);
+  } else {
+
+    callback(200, {
+      welcome: "Hello World!"
+    });
+  }
+
+};
+
 handler.notFound = (data, callback) => {
   callback(404);
 };
