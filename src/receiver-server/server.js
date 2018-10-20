@@ -52,8 +52,8 @@ const httpServer = http.createServer((req, res) => {
 
 const server = {
 
-  start: () => {
-    httpServer.listen(config.port, () => {
+  start: (networkIP) => {
+    httpServer.listen(config.port, networkIP, () => {
       console.log("Receiving server started on port: " + config.port);
     });
   }
