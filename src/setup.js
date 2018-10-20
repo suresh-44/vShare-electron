@@ -21,11 +21,11 @@ document.getElementById("finish").onclick = () => {
 
     if (battery.charging && battery.chargingTime === 0) {
       //console.log("I'm a desktop")
-      appData.write(keys.deviceType, 'DESKTOP');
+      appData.write(keys.deviceType, "DESKTOP");
 
     } else {
       //console.log("I'm not a desktop")
-      appData.write(keys.deviceType, 'LAPTOP');
+      appData.write(keys.deviceType, "LAPTOP");
     }
 
   });
