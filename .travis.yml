@@ -4,11 +4,24 @@ node_js:
 - "node"
 - "lts/*"
 
+branches:
+  only:
+  - master
+
 os:
 - linux
 - osx
 
 before_script:
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start; fi
-- npm install
--
+- chmod +x ./bash_scripts/travis-build.sh
+
+script: ./bash_scripts/travis-build.sh
+
+cache:
+  directories:
+  - node_modules
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
