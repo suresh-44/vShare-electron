@@ -1,12 +1,13 @@
 import fs from "fs";
 import jsonFile from "jsonfile";
 import {remote} from "electron";
+import dataKeys from "./keys";
 
 const app = remote.app;
 const userDataPath = app.getPath("userData");
 const appDataFile = userDataPath + "/app-data.json";
 
-const index = {
+export const appData = {
 
   write: (key, value) => {
     try {
@@ -51,4 +52,4 @@ const index = {
 
 };
 
-export default index;
+export const keys = dataKeys;

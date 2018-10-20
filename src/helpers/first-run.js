@@ -1,15 +1,15 @@
-import index from "../app-data";
+import {appData, keys} from "../app-data";
 
-const appDataKey = "firstRun";
+const appDataKey = keys.firstRun;
 
 const firstRun = {
 
   firstRunDone: () => {
-    index.write(appDataKey, 'shown')
+    appData.write(appDataKey, 'shown')
   },
 
   isFirstRun: () => {
-    return !(index.exists(appDataKey));
+    return !(appData.exists(appDataKey));
   }
 
 };
