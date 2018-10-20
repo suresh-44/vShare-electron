@@ -15,17 +15,17 @@ let previousSlide = function (backTo) {
 };
 
 document.getElementById("next-btn-1").onclick = () => {
-  advanceSlider(2)
+  advanceSlider(2);
 };
 document.getElementById("next-btn-2").onclick = () => {
-  advanceSlider(3)
+  advanceSlider(3);
 };
 
 document.getElementById("prev-btn-1").onclick = () => {
-  previousSlide(1)
+  previousSlide(1);
 };
 document.getElementById("prev-btn-2").onclick = () => {
-  previousSlide(2)
+  previousSlide(2);
 };
 
 document.getElementById("continue-btn").onclick = () => {
