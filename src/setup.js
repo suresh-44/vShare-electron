@@ -1,9 +1,34 @@
+import os from "os";
 import firstRun from "./helpers/first-run";
 import {appData, keys} from "./app-data";
 import "./secure";
 
 document.getElementById("finish").onclick = () => {
-  let username = document.getElementById("username").value;
-  appData.write(keys.username, username);
+
+  let x = document.getElementById("username").value;
+  appData.write(keys.username, x);
+
+  x = os.platform();
+  appData.write(keys.platform, x);
+
+  x = os.arch();
+  appData.write(keys.arch, x);
+
+  x = os.type();
+  appData.write(keys.osType, x);
+
+  navigator.getBattery().then((battery) => {
+
+    if (battery.charging && battery.chargingTime === 0) {
+      //console.log("I'm a desktop")
+      appData.write(keys.deviceType, 'DESKTOP');
+
+    } else {
+      //console.log("I'm not a desktop")
+      appData.write(keys.deviceType, 'LAPTOP');
+    }
+
+  });
+
   firstRun.firstRunDone();
 };
