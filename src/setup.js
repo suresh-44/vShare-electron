@@ -3,7 +3,7 @@ import firstRun from "./helpers/first-run";
 import {appData, keys} from "./app-data";
 import "./secure";
 
-document.getElementById("finish").onclick = () => {
+const finishSetup = () => {
 
   let x = document.getElementById("username").value;
   appData.write(keys.username, x);
@@ -27,8 +27,11 @@ document.getElementById("finish").onclick = () => {
       //console.log("I'm not a desktop")
       appData.write(keys.deviceType, "LAPTOP");
     }
-
   });
 
+};
+
+document.getElementById("finish").onclick = () => {
+  finishSetup();
   firstRun.firstRunDone();
 };
