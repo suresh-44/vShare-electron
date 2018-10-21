@@ -54,7 +54,7 @@ const server = {
 
   start: (networkIP) => {
     httpServer.listen(config.port, networkIP, () => {
-      console.log("Receiving server started on port: " + config.port);
+      console.log(`Receiving server started at http://${networkIP}:${config.port}`);
     });
   }
 

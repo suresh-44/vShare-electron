@@ -1,7 +1,40 @@
 import server from "./server";
+import os from "os";
 
 //TODO determine the local network ip i.e LAN IP
-const networkIP = '127.0.0.1';
+let networkIP = '127.0.0.1';
+
+const networkInterfaces = os.networkInterfaces();
+//console.log(networkInterfaces);
+
+if (networkInterfaces.hasOwnProperty("lo")) {
+  delete networkInterfaces.lo;
+}
+
+let noConnectedNetwork = true;
+
+let networkAddresses = [];
+
+Object.keys(networkInterfaces).forEach((key) => {
+
+  let networkInterface = networkInterfaces[key];
+  for (let i = 0; i < networkInterface.length; i++) {
+
+    let nInterface = networkInterface[i];
+
+    if (!nInterface.internal && nInterface.family === "IPv4") {
+      networkAddresses.push(networkInterface[0].address);
+      noConnectedNetwork = false;
+    }
+  }
+
+});
+
+if (networkAddresses.length > 0 && !noConnectedNetwork) {
+  networkIP = networkAddresses[0];
+} else {
+  //TODO Start a Wi-Fi hotspot if Wi-Fi hardware is available.
+}
 
 const receiverServer = {
   start: () => {
