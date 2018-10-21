@@ -5,7 +5,7 @@ import os from "os";
 let networkIP = '127.0.0.1';
 
 const networkInterfaces = os.networkInterfaces();
-//console.log(networkInterfaces);
+console.log(networkInterfaces);
 
 if (networkInterfaces.hasOwnProperty("lo")) {
   delete networkInterfaces.lo;
@@ -29,7 +29,7 @@ Object.keys(networkInterfaces).forEach((key) => {
   }
 
 });
-
+console.log(networkAddresses);
 if (networkAddresses.length > 0 && !noConnectedNetwork) {
   networkIP = networkAddresses[0];
 } else {
