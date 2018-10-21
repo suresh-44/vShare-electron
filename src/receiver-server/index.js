@@ -36,6 +36,8 @@ if (networkAddresses.length > 0 && !noConnectedNetwork) {
   //TODO Start a Wi-Fi hotspot if Wi-Fi hardware is available.
 }
 
+//TODO change firewall setings to allow access to port config.port.
+
 const receiverServer = {
   start: () => {
     server.start(networkIP);
