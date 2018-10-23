@@ -30,9 +30,7 @@ Object.keys(networkInterfaces).forEach((key) => {
 
 });
 //console.log(networkAddresses);
-if (networkAddresses.length > 0 && !noConnectedNetwork) {
-  networkIP = networkAddresses[0];
-} else {
+if (!(networkAddresses.length > 0 && !noConnectedNetwork)) {
   //TODO Start a Wi-Fi hotspot if Wi-Fi hardware is available.
 }
 
@@ -40,7 +38,9 @@ if (networkAddresses.length > 0 && !noConnectedNetwork) {
 
 const receiverServer = {
   start: () => {
-    server.start(networkIP);
+    for (let i = 0; i < networkAddresses.length; i++) {
+      server.start(networkAddresses[i]);
+    }
   }
 };
 
