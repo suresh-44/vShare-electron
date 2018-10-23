@@ -23,7 +23,7 @@ Object.keys(networkInterfaces).forEach((key) => {
     let nInterface = networkInterface[i];
 
     if (!nInterface.internal && nInterface.family === "IPv4") {
-      networkAddresses.push(networkInterface[0].address);
+      networkAddresses.push(nInterface.address);
       noConnectedNetwork = false;
     }
   }
@@ -31,7 +31,7 @@ Object.keys(networkInterfaces).forEach((key) => {
 });
 //console.log(networkAddresses);
 if (networkAddresses.length > 0 && !noConnectedNetwork) {
-  //networkIP = networkAddresses[0];
+  networkIP = networkAddresses[0];
 } else {
   //TODO Start a Wi-Fi hotspot if Wi-Fi hardware is available.
 }
