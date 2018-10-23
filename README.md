@@ -6,6 +6,35 @@
 [![LICENSE](https://img.shields.io/github/license/vShareApp/vShare-electron.svg?style=flat-square&colorB=blue)](https://github.com/vShareApp/vShare-electron/blob/master/LICENSE)
 
 
-To start the app run `npm run start`
+## TO build the project locally
 
-To create release builds run `npm run release` 
+- Make sure node and npm is installed. If not download from [Node.js Website](https://nodejs.org/)
+
+- Clone the repo.
+  ```bash
+  $ git clone https://github.com/vShareApp/vShare-electron.git
+  ```
+  
+- Navigate to the project directory.
+  ```bash
+  $ cd vShare-electron
+  ```
+
+- Install dependencies: 
+  ```bash
+  $ npm install
+  ```
+  
+- Start the app.
+
+  ```bash
+  $ npm start
+  ```
+  
+- To create executables.
+
+  ```bash
+  $ npm run release
+  ```
+  
+
