@@ -1,9 +1,9 @@
 import http from "http";
 import url from "url";
 import {StringDecoder} from "string_decoder";
-import config from "./config";
+import config from "./config/index";
 import routes from "./routes";
-import handlers from "./handlers";
+import handlers from "./handlers/index";
 
 const httpServer = http.createServer((req, res) => {
 

@@ -1,5 +1,5 @@
 import {expect} from "chai";
-import {appData} from "../app-data";
+import {appData} from "../libs/app-data";
 
 describe("AppData tests", () => {
 

@@ -1,5 +1,5 @@
 import {expect} from "chai";
-import receiverServer from "./../receiver-server";
+import receiverServer from "../libs/receiver-server";
 
 describe("Receive server tests", () => {
 

@@ -1,4 +1,4 @@
-import {appData, keys} from "../app-data";
+import {appData, keys} from "../libs/app-data";
 
 const appDataKey = keys.firstRun;
 

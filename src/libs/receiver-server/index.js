@@ -1,7 +1,7 @@
 import server from "./server";
 import config from "./config";
-import firewall from "./../libs/firewall";
-import {getNetworkIPs} from "./../helpers/networkHelpers";
+import firewall from "../firewall";
+import {getNetworkIPs} from "../../helpers/networkHelpers";
 
 let networkAddresses = [];
 networkAddresses = getNetworkIPs();

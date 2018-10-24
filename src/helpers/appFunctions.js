@@ -1,7 +1,7 @@
 import firstRun from "./first-run";
 import url from "url";
 import path from "path";
-import receiveServer from "../receiver-server";
+import receiveServer from "./../libs/receiver-server";
 import {remote} from "electron";
 
 const currentWindow = remote.getCurrentWindow();

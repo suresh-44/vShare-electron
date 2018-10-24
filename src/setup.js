@@ -1,6 +1,6 @@
 import os from "os";
 import firstRun from "./helpers/first-run";
-import {appData, keys} from "./app-data";
+import {appData, keys} from "./libs/app-data";
 import "./secure";
 
 const finishSetup = () => {
