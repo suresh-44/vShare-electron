@@ -3,7 +3,6 @@ import os from "os";
 import config from "./config";
 import firewall from "./../libs/firewall";
 
-//TODO determine the local network ip i.e LAN IP
 let networkIP = '127.0.0.1';
 
 const networkInterfaces = os.networkInterfaces();
