@@ -42,10 +42,10 @@ export const aboutMenuTemplate = {
       label: "About",
       click: () => {
         openAboutWindow({
-          icon_path: './../../resources/icon.png',
-          copyright: 'Copyright (c) 2018 vShare',
-          package_json_dir: './../../'
-        })
+          icon_path: "./../../resources/icon.png",
+          copyright: "Copyright (c) 2018 vShare",
+          package_json_dir: "./../../"
+        });
       }
     },
     {
