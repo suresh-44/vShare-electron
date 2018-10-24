@@ -9,7 +9,7 @@
     "url": "https://pushkaranand.me"
   },
   "private": true,
-  "copyright": "© 2018, Pushkar Anand",
+  "copyright": "© 2018, vShare",
   "homepage": "http://example.com",
   "main": "app/background.js",
   "repository": {

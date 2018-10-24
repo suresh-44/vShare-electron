@@ -1,3 +1,6 @@
+//import {remote} from "electron"
+import openAboutWindow from "about-window";
+
 export const fileMenuTemplate = {
   label: "File",
   submenu: [
@@ -38,7 +41,11 @@ export const aboutMenuTemplate = {
     {
       label: "About",
       click: () => {
-
+        openAboutWindow({
+          icon_path: './../../resources/icon.png',
+          copyright: 'Copyright (c) 2018 vShare',
+          package_json_dir: './../../'
+        })
       }
     },
     {
