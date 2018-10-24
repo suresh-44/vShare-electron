@@ -1,40 +1,18 @@
 import server from "./server";
-import os from "os";
-
-//TODO determine the local network ip i.e LAN IP
-let networkIP = '127.0.0.1';
-
-const networkInterfaces = os.networkInterfaces();
-//console.log(networkInterfaces);
-
-if (networkInterfaces.hasOwnProperty("lo")) {
-  delete networkInterfaces.lo;
-}
-
-let noConnectedNetwork = true;
+import config from "./config";
+import firewall from "./../libs/firewall";
+import {getNetworkIPs} from "./../helpers/networkHelpers";
 
 let networkAddresses = [];
+networkAddresses = getNetworkIPs();
 
-Object.keys(networkInterfaces).forEach((key) => {
+if (networkAddresses.length === 0) {
 
-  let networkInterface = networkInterfaces[key];
-  for (let i = 0; i < networkInterface.length; i++) {
-
-    let nInterface = networkInterface[i];
-
-    if (!nInterface.internal && nInterface.family === "IPv4") {
-      networkAddresses.push(nInterface.address);
-      noConnectedNetwork = false;
-    }
-  }
-
-});
-//console.log(networkAddresses);
-if (!(networkAddresses.length > 0 && !noConnectedNetwork)) {
   //TODO Start a Wi-Fi hotspot if Wi-Fi hardware is available.
+  //push the network IP address to the networkAddresses array.
 }
 
-//TODO change firewall setings to allow access to port config.port.
+firewall.allowIncoming(config.port);
 
 const receiverServer = {
   start: () => {
