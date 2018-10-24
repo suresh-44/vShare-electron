@@ -1,5 +1,7 @@
 import server from "./server";
 import os from "os";
+import config from "./config";
+import firewall from "./../libs/firewall";
 
 //TODO determine the local network ip i.e LAN IP
 let networkIP = '127.0.0.1';
@@ -31,10 +33,11 @@ Object.keys(networkInterfaces).forEach((key) => {
 });
 //console.log(networkAddresses);
 if (!(networkAddresses.length > 0 && !noConnectedNetwork)) {
+
   //TODO Start a Wi-Fi hotspot if Wi-Fi hardware is available.
 }
 
-//TODO change firewall setings to allow access to port config.port.
+firewall.allowIncoming(config.port);
 
 const receiverServer = {
   start: () => {
