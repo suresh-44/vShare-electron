@@ -5,6 +5,7 @@ os: unstable
 branches:
   only:
   - master
+  - release
 
 skip_tags: true
 
